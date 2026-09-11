@@ -40,7 +40,14 @@ const BACKGROUND = "#0a0a0c";
 const LINE_COLOR = "#9a9aa0";
 const LINE_OPACITY = 0.5;
 /* the supplied vibrant palette, red swapped for the brand vermilion */
-const COLORS = ["#FF6A00", "#AB54F7", "#FF2E0F", "#0072E3", "#00AA3C", "#FFB200"];
+const COLORS = [
+  "#FF6A00",
+  "#AB54F7",
+  "#FF2E0F",
+  "#0072E3",
+  "#00AA3C",
+  "#FFB200",
+];
 const GRID = 4;
 const FADE_PORTION = 1; /* fog reaches the full depth, like the reference */
 
@@ -72,7 +79,9 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
     const canvas = canvasRef.current;
     if (!frame || !canvas) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     /* ================= the tunnel (supplied implementation) ================= */
     let renderer: THREE.WebGLRenderer;
@@ -110,7 +119,10 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
 
     const colorMats = COLORS.map(
       (hex) =>
-        new THREE.MeshBasicMaterial({ color: new THREE.Color(hex), side: THREE.DoubleSide })
+        new THREE.MeshBasicMaterial({
+          color: new THREE.Color(hex),
+          side: THREE.DoubleSide,
+        }),
     );
     const imageMats = IMAGES.map((url) => {
       const mat = new THREE.MeshBasicMaterial({
@@ -135,7 +147,7 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
         undefined,
         () => {
           /* a dead URL costs a blank slab, not a broken tunnel */
-        }
+        },
       );
       return mat;
     });
@@ -150,22 +162,31 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
     const geoFloor = new THREE.PlaneGeometry(colW, SEGMENT_DEPTH);
     const geoWall = new THREE.PlaneGeometry(SEGMENT_DEPTH, rowH);
     const geoTubeZ = new THREE.TubeGeometry(
-      new THREE.LineCurve3(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -SEGMENT_DEPTH)),
+      new THREE.LineCurve3(
+        new THREE.Vector3(0, 0, 0),
+        new THREE.Vector3(0, 0, -SEGMENT_DEPTH),
+      ),
       1,
       LINE_RADIUS,
-      8
+      8,
     );
     const geoTubeX = new THREE.TubeGeometry(
-      new THREE.LineCurve3(new THREE.Vector3(0, 0, 0), new THREE.Vector3(TUNNEL_WIDTH, 0, 0)),
+      new THREE.LineCurve3(
+        new THREE.Vector3(0, 0, 0),
+        new THREE.Vector3(TUNNEL_WIDTH, 0, 0),
+      ),
       1,
       LINE_RADIUS,
-      8
+      8,
     );
     const geoTubeY = new THREE.TubeGeometry(
-      new THREE.LineCurve3(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, TUNNEL_HEIGHT, 0)),
+      new THREE.LineCurve3(
+        new THREE.Vector3(0, 0, 0),
+        new THREE.Vector3(0, TUNNEL_HEIGHT, 0),
+      ),
       1,
       LINE_RADIUS,
-      8
+      8,
     );
 
     const tube = (geo: THREE.BufferGeometry, x: number, y: number, z = 0) => {
@@ -175,7 +196,11 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
     };
 
     /* slab slots on floor, ceiling and both walls */
-    const SLOTS: { geo: THREE.BufferGeometry; pos: THREE.Vector3; rot: THREE.Euler }[] = [];
+    const SLOTS: {
+      geo: THREE.BufferGeometry;
+      pos: THREE.Vector3;
+      rot: THREE.Euler;
+    }[] = [];
     {
       const z = -SEGMENT_DEPTH / 2;
       for (let i = 0; i < cols; i++) {
@@ -286,8 +311,9 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
       let size = h * 0.62;
       ctx.font = `900 ${size}px ${family}`;
       if ("letterSpacing" in ctx) {
-        (ctx as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing =
-          "-0.04em";
+        (
+          ctx as CanvasRenderingContext2D & { letterSpacing: string }
+        ).letterSpacing = "-0.04em";
       }
       const measured = ctx.measureText(text).width;
       size = Math.min(size, (size * (w * 0.94)) / Math.max(1, measured));
@@ -339,7 +365,8 @@ export default function TunnelType({ text = "SAZZAD" }: Props) {
     };
     const onTouchMove = (e: TouchEvent) => {
       const y = e.touches[0]?.clientY;
-      if (y != null && lastTouchY != null) travelTarget += (lastTouchY - y) * 0.12;
+      if (y != null && lastTouchY != null)
+        travelTarget += (lastTouchY - y) * 0.12;
       lastTouchY = y ?? null;
     };
     const onPointerMove = (e: PointerEvent) => {
