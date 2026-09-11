@@ -39,6 +39,11 @@ export const ROLES: Role[] = [
     skills: ["React", "Node.js", "Django", "Laravel", "Python", "TensorFlow"],
     color: "#0072E3",
     fg: "light",
+    logo: {
+      src: "/images/companies/teton.svg",
+      variant: "plate",
+      aspect: 3.23,
+    },
     fr: {
       role: "Ingénieur logiciel II",
       summary:
@@ -68,6 +73,11 @@ export const ROLES: Role[] = [
     skills: ["Python", "Perl", "YAML", "SQLite", "Tk GUI"],
     color: "#6D3BF5",
     fg: "light",
+    logo: {
+      src: "/images/companies/synopsys.svg",
+      variant: "plate",
+      aspect: 4.41,
+    },
     fr: {
       role: "Ingénieur logiciel — Prestataire",
       summary:
@@ -96,6 +106,11 @@ export const ROLES: Role[] = [
     skills: ["Python", "React", "SQL", "Perforce", "Git"],
     color: "#171429",
     fg: "light",
+    logo: {
+      src: "/images/companies/globalfoundries.svg",
+      variant: "plate",
+      aspect: 5.14,
+    },
     fr: {
       role: "Ingénieur logiciel — Prestataire",
       summary:
@@ -123,6 +138,11 @@ export const ROLES: Role[] = [
     skills: ["React", "Node.js", "Express", "REST APIs", "SQL"],
     color: "#FF6A00",
     fg: "light",
+    logo: {
+      src: "/images/companies/codemen.svg",
+      variant: "plate",
+      aspect: 4.0,
+    },
     fr: {
       role: "Ingénieur logiciel I",
       summary:
@@ -150,6 +170,11 @@ export const ROLES: Role[] = [
     skills: ["JavaScript", "Raspberry Pi", "GSM", "Hardware"],
     color: "#FFB200",
     fg: "dark",
+    logo: {
+      src: "/images/companies/pylabs.svg",
+      variant: "plate",
+      aspect: 3.5,
+    },
     fr: {
       role: "Stagiaire ingénieur logiciel",
       summary:

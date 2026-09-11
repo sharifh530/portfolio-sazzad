@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pyGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3776AB" />
+      <stop offset="100%" stop-color="#1E415E" />
+    </linearGradient>
+    <linearGradient id="pyGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD43B" />
+      <stop offset="100%" stop-color="#FFE873" />
+    </linearGradient>
+  </defs>
+  <!-- Py Labs Icon Mark -->
+  <g transform="translate(10, 10)">
+    <rect width="60" height="60" rx="14" fill="#0E1626" />
+    <!-- Python Snake motif abstract -->
+    <path d="M 30 18 C 22 18 20 22 20 26 L 20 32 L 32 32 L 32 36 L 16 36 C 16 44 20 48 26 48 L 30 48 C 30 48 30 45 30 42 C 30 38 34 38 34 38 L 44 38 C 44 30 40 26 34 26 L 30 26 L 30 18 Z" fill="url(#pyGrad1)" />
+    <circle cx="25" cy="23" r="2" fill="#FFFFFF" />
+    <path d="M 40 48 C 48 48 50 44 50 40 L 50 34 L 38 34 L 38 30 L 54 30 C 54 22 50 18 44 18 L 40 18 C 40 18 40 21 40 24 C 40 28 36 28 36 28 L 26 28 C 26 36 30 40 36 40 L 40 40 L 40 48 Z" fill="url(#pyGrad2)" />
+    <circle cx="45" cy="43" r="2" fill="#0E1626" />
+  </g>
+  <!-- Wordmark -->
+  <g fill="#0E1626" transform="translate(82, 0)">
+    <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.5px">PY LABS</text>
+    <text x="1" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="3px" fill="#3776AB">RESEARCH &amp; IOT</text>
+  </g>
+</svg>
